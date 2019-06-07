@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hidden_console", "hidden_console\hidden_console.csproj", "{FEEFB694-6B07-4914-9FDC-A48313ECDEAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEFB694-6B07-4914-9FDC-A48313ECDEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEFB694-6B07-4914-9FDC-A48313ECDEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEFB694-6B07-4914-9FDC-A48313ECDEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEFB694-6B07-4914-9FDC-A48313ECDEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F45D2A6F-A6E2-4580-884F-07C9F5E11259}
+	EndGlobalSection
+EndGlobal
