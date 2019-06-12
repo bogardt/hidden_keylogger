@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("hidden_console")]
+[assembly: AssemblyTitle("keylogger_server")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("hidden_console")]
+[assembly: AssemblyProduct("keylogger_server")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("feefb694-6b07-4914-9fdc-a48313ecdeaa")]
+[assembly: Guid("723f6512-90d3-4c43-8aca-197918e81e24")]
 
 // Version information for an assembly consists of the following four values:
 //

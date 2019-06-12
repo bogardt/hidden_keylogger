@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace hidden_console
+namespace keylogger_client
 {
     public class HiddenWinConsole
     {
