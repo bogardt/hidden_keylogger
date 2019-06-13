@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace keylogger_client
@@ -33,6 +30,11 @@ namespace keylogger_client
             return (key >= Keys.A && key <= Keys.RWin) || (key >= Keys.Enter && key <= Keys.Menu) || key == Keys.Space;
         }
 
+        /// <summary>
+        /// Create specific uid for store data
+        /// </summary>
+        /// <param name="now"></param>
+        /// <returns></returns>
         public static string GetUid(DateTime now)
         {
             var uid = $"{Environment.UserName}-{now.Year}-{now.Month.ToString().PadLeft(2, '0')}-" +
